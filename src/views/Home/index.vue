@@ -1,18 +1,6 @@
 <template>
   <!-- Main -->
       <div>
-        <!-- Header -->
-        <header id="header">
-          <a href="#" class="logo"><strong>Editorial</strong> by HTML5 UP</a>
-          <ul class="icons">
-            <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-            <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-            <li><a href="#" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
-            <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-            <li><a href="#" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li>
-          </ul>
-        </header>
-
         <!-- Banner -->
         <section id="banner">
           <div class="content">
@@ -38,28 +26,28 @@
           </header>
           <div class="features">
             <article>
-              <span class="icon fa-gem"></span>
+              <span class="dIcon fa-gem"></span>
               <div class="content">
                 <h3>Portitor ullamcorper</h3>
                 <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
               </div>
             </article>
             <article>
-              <span class="icon solid fa-paper-plane"></span>
+              <span class="dIcon solid fa-paper-plane"></span>
               <div class="content">
                 <h3>Sapien veroeros</h3>
                 <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
               </div>
             </article>
             <article>
-              <span class="icon solid fa-rocket"></span>
+              <span class="dIcon solid fa-rocket"></span>
               <div class="content">
                 <h3>Quam lorem ipsum</h3>
                 <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
               </div>
             </article>
             <article>
-              <span class="icon solid fa-signal"></span>
+              <span class="dIcon solid fa-signal"></span>
               <div class="content">
                 <h3>Sed magna finibus</h3>
                 <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
@@ -130,6 +118,6 @@
 <style scoped></style>
 <script>
 export default {
-  name: 'BasicPage'
+  name: 'MainPage'
 }
 </script>

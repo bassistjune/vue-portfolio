@@ -1,11 +1,18 @@
-import Vue from 'vue'
 import Vuex from 'vuex'
-import menu from './modules/menus'
 
-Vue.use(Vuex)
-
-export default new Vuex.Store({
-  modules: {
-    menu
+export const store = new Vuex.Store ({
+  state: {
+    visitors: []
+  },
+  mutations: {
+    ADD_VISITOR (state, visitor) {
+      state.visitors = [{ content: visitor, done: false }, ...state.visitors]
+    },
+    REMOVE_VISITOR (state, visitor) {
+      state.visitors.splice(state.visitors.indexOf(visitor), 1)
+    },
+    TOGGLE_VISITOR (state, visitor) {
+      visitor.done = !visitor.done
+    }
   }
 })

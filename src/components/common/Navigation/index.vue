@@ -1,9 +1,9 @@
 <template>
   <div id="sidebar">
     <div class="inner">
-      <!-- 검색 -->
-      <NavSearch></NavSearch>
-      <!-- 검색 -->
+      <!-- 로고 -->
+      <NavLogo></NavLogo>
+      <!-- 로고 -->
       <!-- 메뉴 -->
       <NavMenu></NavMenu>
       <!-- 메뉴 -->
@@ -17,14 +17,14 @@
 <style scoped></style>
 
 <script>
-import NavSearch from './Search/index'
+import NavLogo from './NavLogo/index'
 import NavMenu from './Menu/index'
 import NavContact from './Contact/index'
 
 export default {
   name: 'CommonNavigation',
   components: {
-    NavSearch,
+    NavLogo,
     NavMenu,
     NavContact
   }

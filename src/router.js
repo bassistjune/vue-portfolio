@@ -2,7 +2,7 @@ import { createWebHistory, createRouter } from 'vue-router'
 
 // 라우터 생성
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory(process.env.BASE_URL),
   routes: [
     {
       path: '/',
@@ -15,24 +15,24 @@ const router = createRouter({
           component: () => import('./views/Home/index')
         },
         {
-          path: '/Introduce',
-          name: '본인소개',
-          component: () => import('./views/Introduce/index')
+          path: '/About',
+          name: '프로필',
+          component: () => import('./views/About/index')
         },
         {
-          name: '포트폴리오',
           path: '/Portfolio',
+          name: '포트폴리오',
           component: () => import('./views/Portfolio/index')
         },
         {
-          name: '작업연습장',
+          name: '연습장',
           path: '/Notes',
           component: () => import('./views/Notes/index')
         },
         {
-          name: '목표&지향',
-          path: '/Targets',
-          component: () => import('./views/Target/index')
+          name: '방명록',
+          path: '/Visitors',
+          component: () => import('./views/Visitors/index')
         },
         {
           name: '개인적인것들',
@@ -54,16 +54,56 @@ const router = createRouter({
         {
           name: '게시판',
           path: '/Board',
-          component: () => import('./views/Board/index')
+          component: () => import('./views/Board/index'),
+          children: [
+            {
+              name: '게시판목록',
+              path: '/Board/BoardList',
+              component: () => import('./views/Board/Includes/BoardListPage')
+            },
+            {
+              name: '게시판보기',
+              path: '/Board/BoardView',
+              component: () => import('./views/Board/Includes/BoardViewPage')
+            },
+            {
+              name: '게시판쓰기',
+              path: '/Board/BoardWrite',
+              component: () => import('./views/Board/Includes/BoardWritePage')
+            }
+          ]
+        }
+      ]
+    },
+    {
+      path: '/:pathMatch(.*)*',
+      name: 'errorLayout',
+      component: () => import('@/layout/Error'),
+      children: [
+        {
+          path: '/:pathMatch(.*)*',
+          name: '에러',
+          component: () => import('./views/Error/index')
         }
       ]
     }
   ],
   // base: process.env.BASE_URL,
   linkExactActiveClass: 'activeMenu',
+  beforeRouteUpdate (to, from, next) {
+    /*
+    something...
+    */
+
+    next() // DO IT!
+  },
   scrollBehavior: function (to, from, savedPosition) {
     // 항상 맨 위로 스크롤
-    return { top: 0 }
+    return {
+      el: '.inner',
+      behavior: 'smooth',
+      x: 0
+    }
   }
 })
 

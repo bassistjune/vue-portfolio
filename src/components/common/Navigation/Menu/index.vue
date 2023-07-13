@@ -5,12 +5,13 @@
     </header>
     <ul>
       <li
-        v-for="(item, idx) in routesAll"
-        :key="idx"
+          v-for="(item, idx) in routesAll"
+          :key="idx"
       >
         <router-link
-            v-if="!item.children"
-            @click.passive="clickSame()"
+            v-if="item.name == '게시판' || !item.children"
+            @click.passive="clickSame(item.path)"
+            :class="{ activeMenu: item.name == '게시판' && fullPath.includes(item.path) === true }"
             :to="item.path">{{ item.name }}</router-link>
         <span
             v-else
@@ -20,15 +21,15 @@
             {{ item.name }}
         </span>
         <ul
-          v-if="item.children"
+            v-if="item.children || item.name == '게시판'"
         >
           <li
-            v-for="(item, idx) in item.children"
-            :key="idx"
+              v-for="(item, idx) in item.children"
+              :key="idx"
           >
             <router-link
-              @click.passive="clickSame()"
-              :to="item.path"
+                @click.passive="clickSame(item.path)"
+                :to="item.path"
             >
               {{ item.name }}
             </router-link>
@@ -70,7 +71,7 @@ export default {
     },
     routeFullpath: {
       handler (val) {
-        console.log(val)
+        console.log('routeFullPath', val)
         this.fullPath = val
       },
       deep: true,
@@ -87,7 +88,18 @@ export default {
     this.childHasActive()
   },
   methods: {
-    clickSame () {
+    clickSame (item) {
+      console.log('GNB클릭값', item)
+      // 네비게이션 메뉴 클릭 시 네비게이션 top 상단으로 이동
+      const nav = document.querySelector('#sidebar > .inner')
+      nav.scroll({
+        top: 0,
+        behavior: 'smooth'
+      })
+      // 클릭 된 메뉴의 path와 라우터 값이 같을 시 새로고침.
+      if (item === this.fullPath) {
+        this.$router.go(0)
+      }
     },
     childHasActive () {}
   }

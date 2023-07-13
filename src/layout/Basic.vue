@@ -1,10 +1,10 @@
 <template>
   <div id="wrapper">
-    <!-- <Header></Header> -->
     <div id="main">
       <div class="inner">
+        <InitHeader></InitHeader>
         <router-view></router-view>
-        <Footer></Footer>
+        <InitFooter></InitFooter>
       </div>
     </div>
 
@@ -13,8 +13,8 @@
 </template>
 <style scoped></style>
 <script>
-// import Header from '@/components/common/Header/index'
-import Footer from '@/components/common/Footer/index'
+import InitHeader from '@/components/common/Header/index'
+import InitFooter from '@/components/common/Footer/index'
 import Navigation from '@/components/common/Navigation/index.vue'
 
 // Ui용 제이쿼리 묶음
@@ -26,20 +26,14 @@ import layoutJs from '@/assets/js/layout'
 export default {
   name: 'BasicLayer',
   components: {
-    // Header,8
+    InitHeader,
     Navigation,
-    Footer
+    InitFooter
   },
   data: () => ({
     basicFuncs,
     layoutJs
   }),
-  head () {
-    return {
-      title: 'vpage',
-      meta: [{ property: 'og:title', content: 'vPage' }]
-    }
-  },
   computed: {
     thisRouter () {
       return this.$router

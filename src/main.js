@@ -1,20 +1,43 @@
 // main.js
 import { createApp } from 'vue'
 import App from './App.vue'
-import router from './router' // VueRouter 불러온다.
-// import store from './store';
-import vueHead from 'vue-head'
-// import store from './store'
+import router from './router'
+import Flicking from '@egjs/flicking-plugins'
+import axios from 'axios'
+import { createMetaManager } from 'vue-meta'
+// import Vuex from 'vuex'
+import { vueTyperNext } from 'vue-typer-next'
+import { store } from './store'
 
 // normalize.css
 import './assets/css/normalize.css'
 
+// Prime Icon
+import 'primeicons/primeicons.css'
+
+// import 'vue-typer-next/dist/style.css'
+// 전역 사용 되는 컴포넌트
+import Modal from '@/components/modalPopup/index'
 // 전역 scss
 // require("./assets/css/normalize.css")
 
 const app = createApp(App)
 app.config.productionTip = false
-app.use(router, vueHead)
+app.use(
+  router,
+  axios,
+  vueTyperNext,
+  Flicking
+)
+// app.use(Vuex)
+app.use(store)
+app.use(createMetaManager())
+app.component('Modal', Modal)
 app.mount('#app')
 
+// 글로벌 프로퍼티
+
+app.config.globalProperties.$axios = axios
+app.config.globalProperties.$serverUrl = '//localhost:8081'
 app.config.globalProperties.$routelist = router.options.routes
+app.config.globalProperties.$store = store
