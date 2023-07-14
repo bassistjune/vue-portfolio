@@ -85,7 +85,7 @@
                        "
                   >저장</button>
                 </li>
-                <li><button type="reset">취소</button></li>
+                <li><button @click="fnList" type="reset">취소</button></li>
               </ul>
             </div>
           </div>
@@ -280,7 +280,7 @@ export default {
     fnList () {
       delete this.requestBody.idx
       this.$router.push({
-        path: './list',
+        path: './BoardList',
         query: this.requestBody
       })
     },
@@ -323,6 +323,8 @@ export default {
       if (this.chkImg) {
         // 이미지가 첨부되었을 경우 FormData에 이미지 파일 추가
         formData.append('file', this.imageFile)
+      } else if (!this.chkImg) {
+        formData.append('file', '')
       }
       if (this.idx === undefined) {
         // INSERT

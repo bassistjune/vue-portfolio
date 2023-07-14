@@ -132,6 +132,7 @@
   font-weight: 600;
   color: #333;
   font-size: 18px;
+  background-color: #e6e6e6;
   letter-spacing: -0.03em;
   line-height: 26px;
   text-align: center;
@@ -156,14 +157,18 @@
   padding: 1.5em 2em;
   box-sizing: border-box;
 }
+.ccard-item .card-back p {margin: 0 0 0;}
 .ccard-item .card-back .card-detail dt {
   font-weight: 700;
-  font-size: 2em;
+  font-size: 1.6em;
+  margin: 0 0 0.2em 0;
   letter-spacing: -0.03em;
-  line-height: 1.5;
+  line-height: 1.25;
+  color: #333;
 }
 .ccard-item .card-back .card-detail dd {
-  padding-top: 0.4em;
+  /*padding-top: 0.4em;*/
+  margin-left: 0;
 }
 .ccard-item .card-back .card-detail dd li {
   margin-top: 0.5em;
@@ -180,6 +185,8 @@
   font-weight: 300;
   letter-spacing: -0.03em;
   line-height: 1.6;
+  font-size: 0.8em;
+  color: #666;
 }
 .ccard-item .card-back .btn-wrap {
   display: flex;

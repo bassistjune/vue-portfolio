@@ -33,7 +33,7 @@ const layoutFunc = () => {
   if (!CSS.supports('object-fit') || navigator.userAgent.includes('Safari')) {
     objectFitImages.forEach(function (image) {
       const img = image.querySelector('img')
-      img.style.opacity = '0'
+      // img.style.opacity = '0'
       image.style.backgroundImage = `url("${img.getAttribute('src')}")`
       image.style.backgroundSize = img.style.objectFit || 'cover'
       image.style.backgroundPosition = img.style.objectPosition || 'center'

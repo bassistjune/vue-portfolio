@@ -38,9 +38,11 @@
               <li><router-link to="/About" class="button big">프로필로 이동</router-link></li>
             </ul>
           </div>
-          <span class="image object">
-            <img src="../../assets/images/main_bg1.jpeg" alt="" />
-          </span>
+          <div class="image object">
+            <div class="bgWrap">
+              <div class="rightImg" ><img src="../../assets/images/main_bg1.jpeg" alt="" /></div>
+            </div>
+          </div>
         </section>
 
         <!-- Section -->
@@ -77,6 +79,18 @@ dl > dt.opener > a > i.absolItem {transform: rotate(0deg); transition: rotate 0.
 dl > dd > ul {margin: 0 0 0 0;}
 .faqBtn {display: block; border-bottom: 1px solid #119fcd; position: relative; transition: rotate 0.3s ease;}
 .faqBtn > i.absolItem {content: ''; position: absolute; right: 0; transform: rotate(180deg); font-size: 1em;}
+
+#banner .bgWrap {
+  position: relative;
+  height: 100%;
+  background-color: transparent;
+  border-radius: 1em;
+}
+#banner .bgWrap .rightImg {position: absolute; top: 0; left: 0; right: 0;}
+@media screen and (max-width: 710px) {
+  #banner .bgWrap .rightImg {position: static; max-width: 100%;}
+}
+#banner .bgWrap .rightImg img {max-width: 100%;}
 </style>
 <script>
 import Mainpage from '@/cofig/Main'

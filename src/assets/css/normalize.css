@@ -2327,8 +2327,6 @@ ul.icons li a {border: none; text-decoration: none;}
 #sidebar > .inner::-webkit-scrollbar, #main > .inner::-webkit-scrollbar {
   display: none; /* 크롬, 사파리, 오페라, 엣지 */
 }
-
-
 .icons li > a i.icon:hover {color: #19a2cf !important; letter-spacing: 0;}
 .blind {
   border: 0;
@@ -2340,5 +2338,4 @@ ul.icons li a {border: none; text-decoration: none;}
   position: absolute;
   width: 1px;
 }
-
 .sub_wrap {height: auto; min-height: 80vh; padding: 3em 0 3em 0;}

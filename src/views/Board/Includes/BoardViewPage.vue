@@ -102,7 +102,7 @@ export default {
     }
   },
   created () {
-    this.fnList() // 변경: 리스트 데이터를 가져오는 함수 호출
+    this.getFnList() // 변경: 리스트 데이터를 가져오는 함수 호출
   },
   computed: {
     requestBody () {
@@ -133,15 +133,15 @@ export default {
     inpPassword: {
       handler (v) {
         console.log(v)
+        console.log('passwordEntered', this.passwordEntered)
         if (this.allSpecial.test(v)) {
           console.log('암호에 특수문자 입력됨')
           alert('암호에는 특수문자를 사용할 수 없습니다.')
           this.inpPassword = v.substring(0, v.length - 1)
         }
-        if (this.password === v) {
-          this.passwordEntered = true
-        }
-        console.log('password chk', this.inpPassword, this.password)
+        this.pwEnter(v)
+        console.log('password chk1', v, this.password)
+        console.log('password chk2', this.inpPassword, this.password)
       },
       deep: true,
       immediate: true
@@ -153,6 +153,9 @@ export default {
       deep: true,
       immediate: true
     }
+  },
+  beforeDestroy() {
+    this.passwordEntered = false
   },
   mounted () {
     this.fnGetView()
@@ -189,17 +192,18 @@ export default {
         this.contents = res.data.contents
         this.created_at = res.data.created_at
         console.log('res데이터 수신완료', res.data)
+        this.pwEnter(this.inpPassword)
       } catch (err) {
         if (err.message.indexOf('Network Error') > -1) {
           alert('네트워크가 원활하지 않습니다.\n잠시 후 다시 시도해주세요.')
         }
       }
     },
-    async fnList () {
+    async getFnList () {
       try {
         const res = await this.requestData()
         this.lists = res
-        console.log('fnListInfo_res', res)
+        console.log('getFnListInfo_res', res)
       } catch (err) {
         if (err.message.indexOf('Network Error') > -1) {
           alert('네트워크가 원활하지 않습니다.\n잠시 후 다시 시도해주세요.')
@@ -214,7 +218,7 @@ export default {
     },
     fnUpdate () {
       this.$router.push({
-        path: './write',
+        path: './BoardWrite',
         query: this.requestBody
       })
     },
@@ -231,7 +235,7 @@ export default {
       this.$axios.delete(this.$serverUrl + '/board/' + this.idx, {})
         .then(() => {
           alert('삭제되었습니다.')
-          this.fnList()
+          this.getFnList()
         }).catch((err) => {
           console.log(err)
         })
@@ -248,6 +252,9 @@ export default {
     },
     fnGoList () {
       this.$router.push({ path: 'boardList' })
+    },
+    pwEnter (v) {
+      this.passwordEntered = this.password === this.inpPassword
     }
   }
 }
