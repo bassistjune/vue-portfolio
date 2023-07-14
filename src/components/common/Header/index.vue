@@ -13,9 +13,9 @@
       >
       </vueTyperNext>
       <ul class="icons headerIcons">
-        <li><a href="#"><i class="icon pi pi-youtube"><span>유튜브 바로가기</span></i></a></li>
-        <li><a href="#"><i class="icon pi pi-instagram"><span>인스타그램 바로가기</span></i></a></li>
-        <li><a href="#"><i class="icon pi pi-github"><span>깃허브 바로가기</span></i></a></li>
+        <li><a href="https://youtube.com/@JuneHeeHane" target="_blank"><i class="icon pi pi-youtube"><span>유튜브 바로가기</span></i></a></li>
+        <li><a href="https://www.instagram.com/june_eeeeeeeeeee/" target="_blank"><i class="icon pi pi-instagram"><span>인스타그램 바로가기</span></i></a></li>
+        <li><a href="https://github.com/bassistjune" target="_blank"><i class="icon pi pi-github"><span>깃허브 바로가기</span></i></a></li>
       </ul>
     </div>
   </header>

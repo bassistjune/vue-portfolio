@@ -35,7 +35,7 @@ const router = createRouter({
           component: () => import('./views/Visitors/index')
         },
         {
-          name: '개인적인것들',
+          name: '자료실',
           path: '/Personal',
           component: () => import('./views/Personal/index'),
           children: [

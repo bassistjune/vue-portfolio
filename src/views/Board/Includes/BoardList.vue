@@ -54,7 +54,7 @@
   table tr {display: block;}
   table th, table td {display: block; text-align: left !important;}
   table td:nth-child(3) {display:inline-block; font-size: 0.6em;}
-  table td:nth-child(3)::after {content: '|'; display: inline-block; color: #333333;}
+  table td:nth-child(3)::after {content: '|'; margin-left: 1.75em; display: inline-block; color: #333333;}
   table td:nth-child(4) {display:inline-block; font-size: 0.6em;}
 }
 
