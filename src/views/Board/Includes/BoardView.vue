@@ -10,7 +10,7 @@
         >
           <img
               class="imgContent"
-              :src="require('/Users/hanjunhui/Desktop/project__vue/vue-backend/upload/' + `${boardInfo.file_url}`)"
+              :src="require('/upload/' + `${boardInfo.file_url}`)"
               alt="게시판 이미지">
         </p>
         <p>
