@@ -4,6 +4,7 @@ module.exports = defineConfig({
   publicPath: '/<repository name>/',
   transpileDependencies: true,
   lintOnSave: false,
+  publicPath: '',
   devServer: {
     allowedHosts: 'all',
     historyApiFallback: true
