@@ -1,5 +1,5 @@
 import axios from 'axios'
 
 export default axios.create({
-  baseUrl: '//localhost:8081/api'
+  baseUrl: 'https://my-vue-project-f316fbe23105.herokuapp.com/'
 })
