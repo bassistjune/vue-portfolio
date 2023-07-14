@@ -2,7 +2,6 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
-import Flicking from '@egjs/flicking-plugins'
 import axios from 'axios'
 import { createMetaManager } from 'vue-meta'
 // import Vuex from 'vuex'
@@ -26,8 +25,7 @@ app.config.productionTip = false
 app.use(
   router,
   axios,
-  vueTyperNext,
-  Flicking
+  vueTyperNext
 )
 // app.use(Vuex)
 app.use(store)

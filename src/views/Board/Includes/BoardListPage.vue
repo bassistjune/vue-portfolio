@@ -1,7 +1,7 @@
 <template>
   <div>
     <section class="sub_wrap">
-      <h4>Default</h4>
+      <h4>게시판</h4>
       <div>
         <BoardList :sendList="paginatedData" @sendIdx="boardView"></BoardList>
 

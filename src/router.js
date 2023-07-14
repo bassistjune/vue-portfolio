@@ -24,13 +24,13 @@ const router = createRouter({
           name: '포트폴리오',
           component: () => import('./views/Portfolio/index')
         },
+        // {
+        //   name: '연습장',
+        //   path: '/Notes',
+        //   component: () => import('./views/Notes/index')
+        // },
         {
-          name: '연습장',
-          path: '/Notes',
-          component: () => import('./views/Notes/index')
-        },
-        {
-          name: '방명록',
+          name: 'To-Do-List',
           path: '/Visitors',
           component: () => import('./views/Visitors/index')
         },
@@ -40,9 +40,9 @@ const router = createRouter({
           component: () => import('./views/Personal/index'),
           children: [
             {
-              name: '개인소개',
-              path: '/Personal/PersonalList',
-              component: () => import('./views/Personal/List/index')
+              name: 'etc',
+              path: '/Personal/Etc',
+              component: () => import('./views/Personal/etc/index')
             },
             {
               name: '사진첩',

@@ -6,7 +6,10 @@
 </style>
 <script>
 
+import metaSetting from "@/components/mixins/metaSet";
+
 export default {
+  mixins: [metaSetting],
   data: () => ({
     BoardRoute: ''
   }),

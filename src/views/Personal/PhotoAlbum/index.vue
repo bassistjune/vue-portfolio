@@ -20,12 +20,15 @@
   font: 1rem/1.3 sans-serif;
 }
 </style>
+
 <script>
+import metaSetting from '@/components/mixins/metaSet'
 import PhBtn from './Include/photoBtn'
 import PhList from './Include/photoList'
 import photoItems from '@/cofig/PhotoList'
 import plFuncJs from './Include/photoFunc'
 export default {
+  mixins: [metaSetting],
   components: {
     PhBtn,
     PhList

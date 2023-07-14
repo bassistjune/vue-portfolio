@@ -113,15 +113,20 @@ a {
   -webkit-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
   -ms-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
   transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
-  border-bottom: dotted 1px;
   color: #119fcd;
   text-decoration: none; }
-  a:not(.toggle):hover {
+  a.button:hover {
     border-bottom-color: #119fcd;
     color: #f6f6f6; }
     a:hover strong {
       color: inherit; }
-
+a:hover {color: #f37025;}
+.headerIcons li a:hover i:before {color: #f37025 !important;
+  -moz-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
+  -webkit-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
+  -ms-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
+}
 strong, b {
   color: #3d4449;
   font-weight: 600; }
@@ -2084,7 +2089,7 @@ button,
   display: -ms-flex;
   display: flex;
   border-bottom: solid 5px #119fcd;
-  padding: 6em 0 1em 0;
+  padding: 5em 0 1em 0;
   position: relative; }
   #header > * {
     -moz-flex: 1;

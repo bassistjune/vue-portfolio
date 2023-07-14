@@ -60,11 +60,13 @@ export default {
 .modal {
   position: relative;
   padding: 30px 30px 40px 30px;
-  max-width: 630px;
+  max-width: 640px;
+  max-height: 80vh;
   width: 100%;
   z-index: 1000;
   background: #FFFFFF;
   display: flex;
+  overflow-y: auto;
   flex-direction: column;
   border-radius: 8px;
   &__title {
@@ -90,7 +92,7 @@ export default {
   font-weight: bold;
   color: #2196F3;
   background: transparent;
-  padding: 0.3em;
+  padding: 0.2em;
   width: auto;
   height: auto;
   line-height: 1;
