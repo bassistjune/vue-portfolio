@@ -5,12 +5,12 @@
 
       <div class="box textField01">
         <p
-          v-if="$props.boardInfo.file_url"
+          v-if="$props.boardInfo && $props.boardInfo.file_url"
           class="boardImgBox"
         >
           <img
               class="imgContent"
-              :src="require('/upload/' + `${boardInfo.file_url}`)"
+              :src="'https://my-vue-project-f316fbe23105.herokuapp.com/'+`${boardInfo.file_url}`"
               alt="게시판 이미지">
         </p>
         <p>
