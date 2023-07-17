@@ -5,13 +5,12 @@
           v-for="(item, idx) in phLists"
           :key="idx"
       >
-        <div @click="[
-          callModal(),
+        <div @click="
           zoomData(item)
-        ]">
+        ">
           <p
-              class="bgImg"
-              :style="{'background-image': 'url(' + require('@/assets/images' + `${item.imgUrl}`) + ')'}"
+            class="bgImg"
+            :style="{'background-image': 'url(' + require('@/assets/images/phLists/' + item.imgUrl) + ')'}"
           ></p>
           <ol class="itemArticle">
             <li>{{ item.imgTitle }}</li>
@@ -28,7 +27,7 @@
       <template #body>
         <div>
           <p
-            :style="{'background-image': 'url(' + require('@/assets/images' + `${sendData.imgUrl}`) + ')'}"
+            :style="{'background-image': 'url(' + require('@/assets/images/phLists/' + sendData.imgUrl) + ')'}"
             class="PopBg"
           ></p>
           <dl>
@@ -92,6 +91,7 @@ export default {
     sendData: {},
     pageTit: '포토게시판'
   }),
+  computed: {},
   watch: {
     sendData: {
       handler (val) {
@@ -104,6 +104,7 @@ export default {
     zoomData (event) {
       this.sendData = event
       console.log('this.sendData', this.sendData)
+      this.callModal()
     }
   }
 }

@@ -41,12 +41,12 @@ const router = createRouter({
           children: [
             {
               name: 'etc',
-              path: '/Personal/Etc',
-              component: () => import('./views/Personal/etc/index')
+              path: '/PersonalEtc',
+              component: () => import('./views/Personal/Etc/index')
             },
             {
               name: '사진첩',
-              path: '/Personal/PersonalPhotos',
+              path: '/PersonalPhotoAlbum',
               component: () => import('./views/Personal/PhotoAlbum/index')
             }
           ]

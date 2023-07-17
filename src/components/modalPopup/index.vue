@@ -1,18 +1,20 @@
 <template >
   <div class="modal-backdrop" @click.self="close">
     <div class="modal">
-      <header class="modal-header">
-        <span class="modal__title">{{ $props.title }}</span>
-        <button @click="close" class="btn-close"><i class="icon pi pi-times"><span class="blind">닫기</span></i></button>
-      </header>
-      <section class="modal-body">
-        <slot name="body"
-        />
-      </section>
-      <footer class="modal-footer">
-        <slot name="footer"
-        />
-      </footer>
+      <div class="modal--inner">
+        <header class="modal-header">
+          <span class="modal__title">{{ $props.title }}</span>
+          <button @click="close" class="btn-close"><i class="icon pi pi-times"><span class="blind">닫기</span></i></button>
+        </header>
+        <section class="modal-body">
+          <slot name="body"
+          />
+        </section>
+        <footer class="modal-footer">
+          <slot name="footer"
+          />
+        </footer>
+      </div>
     </div>
   </div>
 </template>
@@ -66,15 +68,19 @@ export default {
   z-index: 1000;
   background: #FFFFFF;
   display: flex;
-  overflow-y: auto;
   flex-direction: column;
   border-radius: 8px;
+  overflow-y: auto;
+  &--inner {}
   &__title {
     font-weight: 600;
     font-size: 24px;
     display: block;
     color: var(--black-title);
     margin-bottom: 30px;
+  }
+  &-body {
+
   }
   &-footer {
     margin-top: 30px;
