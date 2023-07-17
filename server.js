@@ -12,7 +12,7 @@ app.get('/', function (req, res) {
   res.render(path.join(__dirname + '/index.html'))
 })
 
-var port = process.env.PORT || 9090
+let port = process.env.PORT || 9090
 app.listen(port, function() {
   console.log('Express serving on 9090!')
 })
