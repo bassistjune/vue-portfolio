@@ -51,12 +51,12 @@
 import metaSetting from '@/components/mixins/metaSet'
 import Visitors from './includes/visitors'
 export default {
-  components: {Visitors},
+  components: { Visitors },
   mixins: [metaSetting],
   data: () => ({
     newVisitor: ''
   }),
-  mounted() {
+  mounted () {
     console.log('this.$store', this.$store)
   },
   methods: {

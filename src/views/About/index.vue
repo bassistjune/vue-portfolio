@@ -93,7 +93,7 @@
       </div>
     </div>
     <div class="botInfo infoWrap">
-      <a class="button flicker large" href="@/assets/documents/230503_FEDeveloper_HanJuneHee.docx" download target="_self">이력서 다운받기!</a>
+      <a class="button flicker large" href="./documents/230503_FEDeveloper_HanJuneHee.docx" download="230503_FEDeveloper_HanJuneHee" target="_self">이력서 다운받기!</a>
     </div>
   </div>
 </template>

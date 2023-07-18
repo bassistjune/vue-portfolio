@@ -1,6 +1,6 @@
 <template>
   <div class="sub_wrap ">
-    <h3>Projects</h3>
+    <h3>Work</h3>
     <div class="ccard-list-wrap">
       <div
         v-for="(item, i) in lists"
@@ -18,7 +18,7 @@
           </div>
           <div class="card-back">
             <div class="card-back-cont">
-              <div class="card-detail mcsb">
+              <div class="card-detail">
                 <dl>
                   <dt>{{ item.back.bTit }}</dt>
                   <dd>
@@ -56,17 +56,11 @@
 .ccard-list-wrap {
   display: flex;
   flex-wrap: wrap;
-  gap: 1em;
-}
-[class*="ptitle-"] {
-  display: flex;
-  align-items: center;
-  height: 350px;
-  box-sizing: border-box;
+  gap: 3em;
 }
 .ccard-cover {
   width: auto;
-  flex: calc(33.33% - 0.67em) 0;
+  flex: calc(33.33% - 2em) 0;
   height: auto;
   aspect-ratio: 8/7;
 }
@@ -120,7 +114,7 @@
 .ccard-item .card-front .card-img {
 
   width: 100%;
-  padding-bottom: 70%;
+  flex: 1 1 auto;
   position: relative;
   background-size: cover;
   background-repeat: no-repeat;
@@ -217,13 +211,19 @@
 
 @media screen and (max-width: 1460px) {
   .ccard-cover {
-    flex: calc(50% - 0.5em) 0;
+    flex: calc(50% - 1.5em) 0;
   }
+  .ccard-item .card-front p {font-size: 16px;}
+}
+@media screen and (max-width: 1024px) {
+  .ccard-item .card-front p {font-size: 14px;}
 }
 @media screen and (max-width: 960px) {
   .ccard-cover {
     flex: 100% 0;
+    aspect-ratio: 4/3;
   }
+  .ccard-item .card-front p {font-size: 1em;}
 }
 .desc > span {display: inline-block; word-spacing: 0.3em; color: #666; font-weight: 500;}
 .desc > span:last-child > em {display: none;}

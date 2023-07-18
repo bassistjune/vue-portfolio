@@ -15,7 +15,7 @@ const autoMove = {
       }
     }, 1000)
   },
-  beforeDestroy () {
+  beforeUnmount () {
     this.limitedSecond = 8
     if (this.timer) return clearInterval(this.timer)
   },

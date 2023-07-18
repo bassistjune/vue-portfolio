@@ -4,7 +4,6 @@ import App from './App.vue'
 import router from './router'
 import axios from 'axios'
 import { createMetaManager } from 'vue-meta'
-// import Vuex from 'vuex'
 import { vueTyperNext } from 'vue-typer-next'
 import { store } from './store'
 
@@ -36,6 +35,8 @@ app.mount('#app')
 // 글로벌 프로퍼티
 
 app.config.globalProperties.$axios = axios
-app.config.globalProperties.$serverUrl = 'https://my-vue-project-f316fbe23105.herokuapp.com/'
+// app.config.globalProperties.$serverUrl = 'https://my-vue-project-f316fbe23105.herokuapp.com/'
+app.config.globalProperties.$serverUrl = 'http://localhost:8081'
+
 app.config.globalProperties.$routelist = router.options.routes
 app.config.globalProperties.$store = store

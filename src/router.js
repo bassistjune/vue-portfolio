@@ -82,23 +82,22 @@ const router = createRouter({
       children: [
         {
           path: '/:pathMatch(.*)*',
-          name: '에러',
+          name: 'NotFound',
           component: () => import('./views/Error/index')
         }
       ]
     }
   ],
-  // base: process.env.BASE_URL,
+  base: process.env.BASE_URL,
   linkExactActiveClass: 'activeMenu',
   beforeRouteUpdate (to, from, next) {
-    /*
-    something...
-    */
+
 
     next() // DO IT!
   },
-  scrollBehavior: function (to, from, savedPosition) {
+  scrollBehavior(to, from, savedPosition) {
     // 항상 맨 위로 스크롤
+
     return {
       el: '.inner',
       behavior: 'smooth',

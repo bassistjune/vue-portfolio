@@ -10,9 +10,18 @@
         >
           <img
               class="imgContent"
-              :src="'https://my-vue-project-f316fbe23105.herokuapp.com/'+`${boardInfo.file_url}`"
+              :src="'http://localhost:8081/upload/'+`${boardInfo.file_url}`"
               alt="게시판 이미지">
         </p>
+<!--        <p-->
+<!--            v-if="$props.boardInfo && $props.boardInfo.file_url"-->
+<!--            class="boardImgBox"-->
+<!--        >-->
+<!--          <img-->
+<!--              class="imgContent"-->
+<!--              :src="'https://my-vue-project-f316fbe23105.herokuapp.com/'+`${boardInfo.file_url}`"-->
+<!--              alt="게시판 이미지">-->
+<!--        </p>-->
         <p>
           {{ $props.boardInfo.contents }}
         </p>
