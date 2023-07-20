@@ -93,10 +93,17 @@ a, em {
 import LogoSvg from '@/components/common/Logo/index'
 export default {
   components: { LogoSvg },
+  computed: {
+    thisHref() {
+      if (typeof window === 'undefined') return ''
+      return window.location.href
+    },
+  },
   methods: {
     copyUrl (e) {
       e.preventDefault()
-      const urlTag = document.querySelector('.inp-url')
+      // const urlTag = document.querySelector('.inp-url')
+      const urlTag = this.thisHref
       navigator.clipboard.writeText(urlTag.value).then(() => {
         alert('주소가 복사되었습니다.')
       })
