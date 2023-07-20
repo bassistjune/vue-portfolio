@@ -35,8 +35,8 @@ app.mount('#app')
 // 글로벌 프로퍼티
 
 app.config.globalProperties.$axios = axios
-// app.config.globalProperties.$serverUrl = 'https://my-vue-project-f316fbe23105.herokuapp.com/'
-app.config.globalProperties.$serverUrl = 'http://localhost:8081'
+app.config.globalProperties.$serverUrl = 'https://ogpctvliwr.us14.qoddiapp.com'
+// app.config.globalProperties.$serverUrl = 'http://localhost:3000/'
 
 app.config.globalProperties.$routelist = router.options.routes
 app.config.globalProperties.$store = store

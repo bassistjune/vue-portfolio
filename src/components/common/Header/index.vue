@@ -32,6 +32,9 @@
   @media screen and (max-width: 780px) {
     .headerInner::v-deep .headerTyping {font-size: 1.3em; height: fit-content;}
   }
+  @media screen and (max-width: 680px) {
+    .headerInner .headerTyping {display: none;}
+  }
 </style>
 <script>
 import LogoSvg from '../Logo/index'

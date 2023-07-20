@@ -76,7 +76,9 @@ p.bgImg {margin: 0;}
 /* GRID VIEW
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .grid-view {display: grid; grid-gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(var(--minRangeValue), 1fr));}
-
+@media screen and (max-width:420px) {
+  .grid-view {grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));}
+}
 /* LIST VIEW
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .list-view li+li {margin-top: 0.5rem;}
