@@ -20,7 +20,7 @@
         </div>
       </div>
       <div class="col-6 col-12-medium">
-        <h3 class="alignC">ToDo 등록</h3>
+        <h3 class="alignC mobile-bottom">ToDo 등록</h3>
         <p class="tIndent">d</p>
         <ul class="cRow actions">
           <li class="sideItem">
@@ -102,4 +102,11 @@ export default {
   .btns > button {box-shadow: none; border: 2px solid #119fcd; line-height: 100%; }
 
   .sm_red {font-style: normal; color: firebrick; font-size: 0.8em; }
+  @media screen and (max-width: 980px) {
+    .mobile-bottom {
+      margin-top: 3em;
+      border-top: 1px solid #d2d7d9bf;
+      padding-top: 2em;
+    }
+  }
 </style>
