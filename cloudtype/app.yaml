@@ -1,0 +1,11 @@
+name: vue3
+app: web
+options:
+  docbase: /docs
+  nodeversion: "18"
+  spa: true
+context:
+  git:
+    url: https://github.com/bassistjune/vue-portfolio.git
+    branch: master
+  preset: vue-3
