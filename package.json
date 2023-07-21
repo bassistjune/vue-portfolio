@@ -40,6 +40,9 @@
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-vue": "^9.14.1"
   },
+  "browser": {
+    "crypto": false
+  },
   "eslintConfig": {
     "root": true,
     "env": {
