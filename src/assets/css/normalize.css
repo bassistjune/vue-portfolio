@@ -139,7 +139,7 @@ p {
 
 h1, h2, h3, h4, h5, h6 {
   color: #3d4449;
-  font-family: "NotoSansKr", "Roboto Slab", "MDL2", serif;
+  font-family: "NotoSansKr", "MDL2", serif;
   font-weight: 700;
   line-height: 1.5;
   margin: 0 0 1em 0; }
@@ -997,7 +997,7 @@ section.special, article.special {
   text-align: center; }
 
 header p {
-  font-family: "NotoSansKr", "Roboto Slab", serif;
+  font-family: "NotoSansKr", serif;
   font-size: 1em;
   font-weight: 400;
   letter-spacing: 0.075em;
@@ -1005,11 +1005,21 @@ header p {
   text-transform: uppercase; }
 
 header.major > :last-child {
-  border-bottom: solid 4px #119fcd;
+  position: relative;
+  /*border-bottom: solid 4px #119fcd;*/
   display: inline-block;
   margin: 0 0 2em 0;
-  padding: 0 0.75em 0.2em 0.75em; }
-
+  padding: 0 0.75em 0.2em 0.75em; z-index:5;}
+header.major > :last-child:before {
+  content: '';
+  position: absolute;
+  bottom: -40%;
+  right: -10%;
+  left: -10%;
+  height: 90%;
+  background-color: #119fcd;
+  z-index: -1;
+}
 header.main > :last-child {
   margin: 0 0 1em 0; }
 
@@ -1508,7 +1518,7 @@ button,
   color: #119fcd;
   cursor: pointer;
   display: inline-block;
-  font-family: "NotoSansKr", "Roboto Slab", serif;
+  font-family: "NotoSansKr", serif;
   font-size: 0.8em;
   font-weight: 700;
   height: 3.5em;
@@ -2221,7 +2231,7 @@ button,
   -ms-user-select: none;
   user-select: none;
   color: #3d3d3d;
-  font-family: "NotoSansKr", "Roboto Slab", serif;
+  font-family: "NotoSansKr", serif;
   font-weight: 400;
   letter-spacing: 0.075em;
   list-style: none;

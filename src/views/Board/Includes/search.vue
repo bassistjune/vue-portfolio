@@ -10,7 +10,7 @@
 </template>
 
 <style scoped>
-  .__relative {position: relative; padding: 60px auto 0; max-width: 600px; margin: 0 auto;}
+  .__relative {position: relative; padding: 60px 0 0; max-width: 600px; margin: 0 auto;}
   .posRel {position: relative;}
   .__absoluteR {position: absolute; right: 0; top:0; bottom : 0;}
   .btnSearch { font-family: "MDL2", sans-serif;border: none; box-shadow: none; }

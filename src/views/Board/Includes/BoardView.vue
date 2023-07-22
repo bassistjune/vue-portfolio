@@ -10,7 +10,7 @@
         >
           <img
               class="imgContent"
-              :src="'http://localhost:8081/upload/'+`${boardInfo.file_url}`"
+              :src="'http://localhost:8082/upload/'+`${boardInfo.file_url}`"
               alt="게시판 이미지">
         </p>
 <!--        <p-->
