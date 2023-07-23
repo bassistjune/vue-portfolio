@@ -39,7 +39,7 @@ export default {
 <style lang="scss">
 .modal-backdrop {
   position: fixed;
-  z-index: 999;
+  z-index: 99999;
   top: 0;
   bottom: 0;
   left: 0;
@@ -48,6 +48,12 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0); // safari bug fix
+  -moz-transform: translateZ(0); // safari bug fix
+  backface-visibility: hidden;
+  -webkit-backface-visibility:hidden;
+  -moz-backface-visibility:hidden;
 }
 @media screen and (max-width: 980px) {
   .modal {
