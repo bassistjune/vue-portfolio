@@ -209,7 +209,7 @@ code {
   padding: 0.25em 0.65em; }
 
 pre {
-  -webkit-overflow-scrolling: touch;
+  /*-webkit-overflow-scrolling: touch;*/
   font-family: "Courier New", monospace;
   font-size: 0.9em;
   margin: 0 0 2em 0; }
@@ -1458,7 +1458,7 @@ ul.pagination {
 
 /* Table */
 .table-wrapper {
-  -webkit-overflow-scrolling: touch;
+  /*-webkit-overflow-scrolling: touch;*/
   overflow-x: auto; }
 
 table {
@@ -2055,7 +2055,7 @@ button,
       #sidebar.inactive {
         box-shadow: none; }
       #sidebar > .inner {
-        -webkit-overflow-scrolling: touch;
+        /*-webkit-overflow-scrolling: touch;*/
         height: 100%;
         left: 0;
         overflow-x: hidden;
