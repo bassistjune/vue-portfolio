@@ -263,7 +263,7 @@ export default {
   methods: {
     fnGetView () {
       if (this.idx !== undefined) {
-        this.$axios.get(this.$serverUrl + '/board/' + this.idx, {
+        this.$axios.get(this.$serverUrl + 'board/' + this.idx, {
           params: this.requestBody
         }).then((res) => {
           this.title = res.data.title
@@ -311,7 +311,7 @@ export default {
       this.imgName = ''
     },
     fnSave () {
-      const apiUrl = this.$serverUrl + '/board'
+      const apiUrl = this.$serverUrl + 'board'
       const formData = new FormData()
       formData.append('title', this.title)
       formData.append('author', this.author)

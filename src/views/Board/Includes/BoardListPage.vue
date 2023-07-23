@@ -140,7 +140,7 @@ export default {
         size: this.size
       }
 
-      this.$axios.get(this.$serverUrl + '/board/list/', {
+      this.$axios.get(this.$serverUrl + 'board/list/', {
         params: this.requestBody,
         headers: {}
       }).then((res) => {
