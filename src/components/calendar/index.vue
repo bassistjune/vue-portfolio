@@ -1,12 +1,11 @@
 <template>
   <div class="calendarWrap">
     <div class="calTop">
-      <div class="year"></div>
-      <div class="month"></div>
+      <div class="year">{{ viewYear }}년 {{ viewMonth + 1 }}월</div>
       <div class="remote">
-        <button class="remote-btn go-prev" onclick="prevMonth()">&lt;</button>
-        <button class="remote-btn go-today" onclick="goToday()">Today</button>
-        <button class="remote-btn go-next" onclick="nextMonth()">&gt;</button>
+        <button class="remote-btn go-prev" @click="prevMonth()">&lt;</button>
+        <button class="remote-btn go-today" @click="goToday()">Today</button>
+        <button class="remote-btn go-next" @click="nextMonth()">&gt;</button>
       </div>
     </div>
     <div class="calMid">
@@ -19,105 +18,125 @@
         <div class="day">금</div>
         <div class="day">토</div>
       </div>
-      <div class="dates"></div>
+      <div class="dates">
+        <div v-for="(date, i) in dates" :key="i" class="date">
+          <span :class="date.condition">{{ date.value }}</span>
+        </div>
+      </div>
     </div>
   </div>
 </template>
-<style scoped>
+<style>
 .calendarWrap {width: 100%; margin: 1em auto;}
 .calTop {display: flex; justify-content: space-between; align-items: center;}
 .year, .month {font-size: 1em; }
-.remote {display: flex; border: 1px solid #333;}
-.remote-btn {width: 1.2em; height: 1.2em; border: none; font-size: 16px; line-height: 1.1em; background-color: transparent; cursor: pointer;}
+.remote {display: flex; gap: 0.5em;}
+.remote-btn {width: fit-content; height: auto; padding: 0.3em 0.25em; border: none; font-size: 1em; line-height: 1.2; background-color: transparent; cursor: pointer;}
 
-.go-today {width: 0.75em; border-left: 1px solid #333; border-right: 1px solid #333;}
-.days {display: flex; margin: 0.5em 0; }
+.go-today {width: fit-content; font-size: 1em;}
+.days {display: flex; padding: 0.5em 0; border-bottom: 1px solid #333;}
 .day {width: calc(100% / 7); text-align: center;}
-.dates {display: flex; flex-flow: row wrap; height: 100%; border-top: 1px solid #333; border-bottom: 1px solid #333; border-right: 1px solid #333; }
-.date {width: calc(100% / 7); padding: 15px; text-align: center; border-bottom: 1px solid #333; border-left: 1px solid #333;}
+.dates {display: flex; flex-flow: row wrap; height: 100%; border-bottom: 1px solid #333; }
+.dates > * {width: calc(100% / 7); display: flex; padding: 0; align-items: center; justify-content: center; text-align: center; border-bottom: 1px solid #333; aspect-ratio: 1/1;}
 
 .day:nth-child(7n + 1), .date:nth-child(7n + 1) {color: #d13e3e;}
 .day:nth-child(7n), .date:nth-child(7n) {color: #396ee2;}
 
-.other{opacity: 0.3;}
+.other {opacity: 0.3;}
 .today {position: relative; color: #fff;}
 .today::before {content: ''; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); z-index: -1; width: 30px; height: 30px; display: block; background: #ff0000; border-radius: 50%;}
 </style>
 <script>
+import calendarJs from '@/assets/js/calendarFunc';
 export default {
   data() {
     return {
-      date: new Date()
+      date: new Date(),
+      viewYear: 0,
+      viewMonth: 0,
+      prevLast: null,
+      thisLast: null,
+      PLDate: 0,
+      PLDay: 0,
+      TLDate: 0,
+      TLDay: 0,
+      prevDates: [],
+      thisDates: [],
+      nextDates: [],
+      dates: [],
+      today: null,
+      diffDay: null
     }
   },
-  methods: {
-    renderCalendar() {
-      const viewYear = this.date.getFullYear()
-      const viewMonth = this.date.getMonth()
-
-      this.$refs.year.textContent = `${viewYear}년`
-      this.$refs.month.textContent = `${viewMonth + 1}월`
-      const prevLast = new Date(viewYear, viewMonth, 0)
-      const thisLast = new Date(viewYear, viewMonth + 1, 0)
-
-      const PLDate = prevLast.getDate()
-      const PLDay = prevLast.getDay()
-
-      const TLDate = thisLast.getDate()
-      const TLDay = thisLast.getDay()
-
-      const prevDates = []
-      const thisDates = [...Array(TLDate + 1).keys()].slice(1)
-      const nextDates = []
-
-      if (PLDay !== 6) {
-        for (let i = 0; i < PLDay + 1; i++) {
-          prevDates.unshift(PLDate - i)
-        }
-      }
-
-      for (let i = 1; i < 7 - TLDay; i++) {
-        nextDates.push(i)
-      }
-
-      const dates = prevDates.concat(thisDates, nextDates)
-      const firstDateIndex = dates.indexOf(1)
-      const lastDateIndex = dates.lastIndexOf(TLDate)
-
-      dates.forEach((date, i) => {
-        const condition = i >= firstDateIndex && i < lastDateIndex + 1
-            ? 'this'
-            : 'other'
-        dates[i] = `<div class="date"><span class=${condition}>${date} </span></div>`
-      })
-
-      this.$refs.dates.innerHTML = dates.join('')
-
-      const today = new Date()
-      if (viewMonth === today.getMonth() && viewYear === today.getFullYear()) {
-        for (let date of this.$refs.dates.querySelectorAll('.this')) {
-          if (+date.innerText === today.getDate()) {
-            date.classList.add('today')
-            break;
-          }
-        }
-      }
-    },
-    prevMonth() {
-      this.date.setMonth(this.date.getMonth() - 1)
-      this.renderCalendar()
-    },
-    nextMonth() {
-      this.date.setMonth(this.date.getMonth() + 1)
-      this.renderCalendar()
-    },
-    goToday() {
-      this.date = new Date()
-      this.renderCalendar()
-    }
+  watch: {
+    diffDay: {}
   },
   mounted() {
-    this.renderCalendar()
+    this.today = new Date()
+    this.calendarFt()
+  },
+  methods: {
+    calendarFt () {
+      this.viewYear = this.date.getFullYear()
+      this.viewMonth = this.date.getMonth()
+
+      this.$nextTick(() => {
+        this.prevLast = new Date(this.viewYear, this.viewMonth, 0)
+        this.thisLast = new Date(this.viewYear, this.viewMonth + 1, 0)
+
+        this.PLDate = this.prevLast.getDate()
+        this.PLDay = this.prevLast.getDay()
+
+        this.TLDate = this.thisLast.getDate()
+        this.TLDay = this.thisLast.getDay()
+
+        this.prevDates = []
+        this.thisDates = [...Array(this.TLDate + 1).keys()].slice(1)
+        this.nextDates = []
+        console.log('this.thisDates', this.thisDates)
+        if (this.PLDay !== 6) {
+          for (let i = 0; i < this.PLDay + 1; i++) {
+            this.prevDates.unshift(this.PLDate - i)
+          }
+        }
+
+        const nextMonthDays = 7 - this.TLDay - 1
+        for (let i = 1; i <= nextMonthDays; i++) {
+          this.nextDates.push(i)
+        }
+
+        this.dates = this.prevDates.map((date) => ({
+          value: date,
+          condition: 'other'
+        }))
+
+        this.dates.push(
+            ...this.thisDates.map((date) => ({
+              value: date,
+              condition: date === this.today.getDate() && this.viewMonth === this.today.getMonth() && this.viewYear === this.today.getFullYear() ? 'today' : 'this'
+            }))
+        )
+
+        this.dates.push(
+            ...this.nextDates.map((date) => ({
+              value: date,
+              condition: 'other'
+            }))
+        )
+      })
+    },
+    prevMonth () {
+      this.date.setMonth(this.date.getMonth() - 1)
+      this.calendarFt()
+    },
+    goToday () {
+      this.date = new Date()
+      this.calendarFt()
+    },
+    nextMonth () {
+      this.date.setMonth(this.date.getMonth() + 1)
+      this.calendarFt()
+    }
   }
-}
+};
 </script>
