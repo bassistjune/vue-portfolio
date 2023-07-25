@@ -1,8 +1,7 @@
 name: vue3
 app: web
 options:
-  docbase: /docs
-  nodeversion: "18"
+  nodeversion: '18'
   spa: true
 context:
   git:
