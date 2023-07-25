@@ -140,7 +140,7 @@
 .myInfo > li > * {font-size: 1.2em;}
 .myInfo > li i {display: inline-block; margin-right: 1em;}
 .myInfo > li span {display: inline-block; white-space: pre;}
-.strongRed {font-style: normal; font-weight: 600; color: #ff5500;}
+.strongRed {font-style: normal; font-weight: 600;}
 @media screen and (max-width: 980px) {
   .topInfo {flex-direction: column}
   .topInfo > .imgWrap {width: 100%;}
