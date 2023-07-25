@@ -10,7 +10,7 @@
         >
           <img
               class="imgContent"
-              :src="'http://localhost:8082/upload/'+`${boardInfo.file_url}`"
+              :src="'https://github.com/bassistjune/springboot-back/blob/ab44124efb07412caf6b9aa06747509671835c5e/src/main/resources/static/upload/ssg_landers.jpeg'+`${boardInfo.file_url}`+'?raw=true'"
               alt="게시판 이미지">
         </p>
 <!--        <p-->
