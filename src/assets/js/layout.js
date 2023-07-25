@@ -168,7 +168,7 @@ const layoutFunc = () => {
         }
       })
       opener.classList.toggle('active')
-      // window.dispatchEvent(new Event('resize'))
+      window.dispatchEvent(new Event('resize'))
     })
   })
 }
