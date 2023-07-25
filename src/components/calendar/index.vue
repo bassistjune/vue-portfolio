@@ -31,7 +31,7 @@
 .calTop {display: flex; justify-content: space-between; align-items: center;}
 .year, .month {font-size: 1em; }
 .remote {display: flex; gap: 0.5em;}
-.remote-btn {width: fit-content; height: auto; padding: 0.3em 0.25em; border: none; font-size: 1em; line-height: 1.2; background-color: transparent; cursor: pointer;}
+.remote-btn {width: auto; height: auto; padding: 0.8em 2em; border: none; font-size: 1em; line-height: 1.2; background-color: transparent; cursor: pointer;}
 
 .go-today {width: fit-content; font-size: 1em;}
 .days {display: flex; padding: 0.5em 0; border-bottom: 1px solid #333;}
