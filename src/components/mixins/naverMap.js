@@ -11,8 +11,20 @@ const naverMaps = {
     modalIsAddr: {
       handler(v) {
         console.log('v', v)
+        if (!v && !this.isShowModal) {
+          this.map = null
+          console.log('this.map', this.map)
+        }
       },
-      deep: true,
+      immediate: true
+    },
+    isShowModal: {
+      handler(v) {
+        if (!v && !this.modalIsAddr) {
+          this.map = null
+          console.log('this.map', this.map)
+        }
+      },
       immediate: true
     }
   },

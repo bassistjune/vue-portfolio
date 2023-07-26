@@ -122,7 +122,7 @@ export default {
       if (this.remainingDays > 0) {
         return `올해 생일이 ${this.remainingDays}일 남았습니다.`
       } else if (this.remainingDays === 0) {
-        return '올해 생일입니다!'
+        return '오늘은 생일입니다!'
       } else {
         return `올해 생일이 ${Math.abs(this.remainingDays)}일 지났습니다.`
       }
