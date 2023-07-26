@@ -1,6 +1,6 @@
 <template>
   <div class="sub_wrap">
-    <div class="row gtr-200">
+    <div class="__row gtr-200">
       <div class="col-6 col-12-medium">
         <h3 class="alignC">ToDo 리스트</h3>
         <div class="visitList">

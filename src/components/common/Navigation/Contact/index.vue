@@ -107,22 +107,22 @@ export default {
     currentDateFormatted() {
       const currentDate = new Date()
       const year = currentDate.getFullYear()
-      const month = String(currentDate.getMonth() + 1).padStart(2, '0') // 월에 0을 추가하여 두 자리로 만듭니다
-      const day = String(currentDate.getDate()).padStart(2, '0') // 일에 0을 추가하여 두 자리로 만듭니다
+      const month = String(currentDate.getMonth() + 1).padStart(2, '0')
+      const day = String(currentDate.getDate()).padStart(2, '0')
       return '현재날짜 : ' + `${year}년 ${month}월 ${day}일`
     },
     remainingDays() {
-      const targetDate = new Date(new Date().getFullYear(), 6, 26) // 7월 26일을 가리키는 날짜를 만듭니다
+      const targetDate = new Date(new Date().getFullYear(), 6, 26)
       const currentDate = new Date()
-      const difference = targetDate.getTime() - currentDate.getTime() // 밀리초 단위로 두 날짜 사이의 차이를 계산합니다
-      const daysDifference = Math.ceil(difference / (1000 * 60 * 60 * 24)) // 차이를 날짜로 변환합니다
+      const difference = targetDate.getTime() - currentDate.getTime()
+      const daysDifference = Math.ceil(difference / (1000 * 60 * 60 * 24))
       return daysDifference
     },
     birthdayMessage() {
       if (this.remainingDays > 0) {
         return `올해 생일이 ${this.remainingDays}일 남았습니다.`
       } else if (this.remainingDays === 0) {
-        return '오늘은 생일입니다!'
+        return '오늘정 생일입니다!'
       } else {
         return `올해 생일이 ${Math.abs(this.remainingDays)}일 지났습니다.`
       }

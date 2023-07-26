@@ -4,7 +4,7 @@
       <div class="mW1200">
         <h3>게시판 글쓰기</h3>
         <p class="colRed">* 모든 입력란을 기재하셔야 글이 작성됩니다.</p>
-          <div class="row gtr-uniform">
+          <div class="__row gtr-uniform">
             <div class="col-12">
               <input type="text" v-model="title" id="board-tit" placeholder="제목을 입력하세요.">
             </div>
@@ -36,7 +36,7 @@
             </div>
             <div
                 v-show="chkImg"
-                class="ImgWrap row col-12">
+                class="ImgWrap __row col-12">
               <div class="col-8 col-12-small">
                 <input type="text" class="__fileName" :value="imgName" placeholder="이미지명" readonly>
               </div>
