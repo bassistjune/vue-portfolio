@@ -178,7 +178,7 @@ export default {
     },
     async fnGetView () {
       try {
-        const res = await this.$axios.get(this.$serverUrl + 'board/' + this.routeIdx, {
+        const res = await this.$axios.get(this.$serverUrl + '/board/' + this.routeIdx, {
           params: this.requestBody
         })
         console.log('res', res)
@@ -211,7 +211,7 @@ export default {
       }
     },
     requestData () {
-      return this.$axios.get(this.$serverUrl + 'board/list', {
+      return this.$axios.get(this.$serverUrl + '/board/list', {
         params: this.requestBody,
         headers: {}
       }).then((res) => res.data)
@@ -232,7 +232,7 @@ export default {
     fnDelete () {
       if (!confirm('삭제하시겠습니까?')) return
 
-      this.$axios.delete(this.$serverUrl + 'board/' + this.idx, {})
+      this.$axios.delete(this.$serverUrl + '/board/' + this.idx, {})
         .then(() => {
           alert('삭제되었습니다.')
           this.getFnList()

@@ -35,8 +35,8 @@ app.mount('#app')
 // 글로벌 프로퍼티
 
 app.config.globalProperties.$axios = axios
-app.config.globalProperties.$serverUrl = 'https://port-0-board-back-rt92alkcdc6qo.sel4.cloudtype.app/'
-// app.config.globalProperties.$serverUrl = 'https://port-0-java-springboot-rt92alkc3owhx.sel4.cloudtype.app/'
+app.config.globalProperties.$serverUrl = 'https://port-0-board-back-rt92alkcdc6qo.sel4.cloudtype.app'
+// app.config.globalProperties.$serverUrl = 'http://localhost:8082'
 
 app.config.globalProperties.$routelist = router.options.routes
 app.config.globalProperties.$store = store

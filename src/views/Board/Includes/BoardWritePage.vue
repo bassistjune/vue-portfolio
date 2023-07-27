@@ -108,7 +108,7 @@
 .mW1200 {width: 100%; margin: 0 auto; max-width: 800px;}
 .colRed {color: red; font-size: 0.75em;}
 .previewImg {}
-.previewImgBg {background-size: contain; width: 16em; height: 9em;}
+.previewImgBg {background-size: contain; background-repeat: no-repeat; width: 16em; height: 9em;}
 input[type="file"] {
   position: absolute;
   width: 1px;
@@ -263,7 +263,7 @@ export default {
   methods: {
     fnGetView () {
       if (this.idx !== undefined) {
-        this.$axios.get(this.$serverUrl + 'board/' + this.idx, {
+        this.$axios.get(this.$serverUrl + '/board/' + this.idx, {
           params: this.requestBody
         }).then((res) => {
           this.title = res.data.title
@@ -311,7 +311,7 @@ export default {
       this.imgName = ''
     },
     fnSave () {
-      const apiUrl = this.$serverUrl + 'board'
+      const apiUrl = this.$serverUrl + '/board'
       const formData = new FormData()
       formData.append('title', this.title)
       formData.append('author', this.author)
