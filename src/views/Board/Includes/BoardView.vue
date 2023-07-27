@@ -10,7 +10,7 @@
         >
           <img
               class="imgContent"
-              :src="'$serverUrl'+`${boardInfo.file_url}`"
+              :src="`${ this.$serverUrl }`+`${boardInfo.file_url}`"
               alt="게시판 이미지">
         </p>
 <!--        <p-->
