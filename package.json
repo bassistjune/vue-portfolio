@@ -2,7 +2,7 @@
   "name": "project-myhome",
   "version": "0.1.0",
   "private": true,
-  "homepage": "/vue-portfolio/",
+  "homepage": "/",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build  --mode production",
