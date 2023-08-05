@@ -93,7 +93,8 @@ export default {
         this.prevDates = []
         this.thisDates = [...Array(this.TLDate + 1).keys()].slice(1)
         this.nextDates = []
-        console.log('this.thisDates', this.thisDates)
+
+
         if (this.PLDay !== 6) {
           for (let i = 0; i < this.PLDay + 1; i++) {
             this.prevDates.unshift(this.PLDate - i)

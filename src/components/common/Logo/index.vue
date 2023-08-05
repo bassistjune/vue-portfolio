@@ -35,7 +35,7 @@
 <script>
 export default {
   mounted() {
-    console.log('this.$route', this.$route)
+    // console.log('this.$route', this.$route)
   },
   methods: {
     goToMain () {

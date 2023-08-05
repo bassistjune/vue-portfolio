@@ -156,7 +156,7 @@ export default {
       handler (v) {
         console.log(v)
         if (this.allSpecial.test(v)) {
-          console.log('제목에 특수문자 입력됨')
+          // console.log('제목에 특수문자 입력됨')
           alert('제목에 특수문자는 입력 될 수 없습니다.')
           this.title = v.substring(0, v.length - 1)
           this.titEntered = false
@@ -172,13 +172,13 @@ export default {
       handler (v) {
         console.log(v)
         if (this.allSpecial.test(v)) {
-          console.log('이름에 특수문자 입력됨')
+          // console.log('이름에 특수문자 입력됨')
           alert('이름에 특수문자는 입력 될 수 없습니다.')
           this.author = v.substring(0, v.length - 1)
           this.authorEntered = false
         }
         if (this.notNumber.test(v)) {
-          console.log('작성자에 숫자입력')
+          // console.log('작성자에 숫자입력')
           alert('작성자명에 숫자를 입력할 수 없습니다.')
           this.author = v.substring(0, v.length - 1)
           this.authorEntered = false
@@ -192,7 +192,7 @@ export default {
     },
     password: {
       handler (v) {
-        console.log(v)
+        // console.log(v)
         if (this.allSpecial.test(v)) {
           console.log('암호에 특수문자 입력됨')
           alert('암호에는 특수문자를 사용할 수 없습니다.')
@@ -236,7 +236,7 @@ export default {
         if (v.length > 3) {
           this.contentsEntered = true
         }
-        console.log('contents', v)
+        // console.log('contents', v)
       },
       deep: true,
       immediate: true
@@ -248,8 +248,8 @@ export default {
         } else {
           this.chkAgree = false
         }
-        console.log('this.chkAgree', this.chkAgree)
-        console.log('titEntered,authorEntered,emailEntered,typeEntered,contentsEntered,chkAgree', this.titEntered, this.authorEntered, this.passwordEntered, this.emailEntered, this.typeEntered, this.contentsEntered, this.chkAgree)
+        // console.log('this.chkAgree', this.chkAgree)
+        // console.log('titEntered,authorEntered,emailEntered,typeEntered,contentsEntered,chkAgree', this.titEntered, this.authorEntered, this.passwordEntered, this.emailEntered, this.typeEntered, this.contentsEntered, this.chkAgree)
       },
       deep: true,
       immediate: true
@@ -257,8 +257,8 @@ export default {
   },
   mounted () {
     this.fnGetView()
-    console.log('type', this.type)
-    console.log('this.idx', this.idx)
+    // console.log('type', this.type)
+    // console.log('this.idx', this.idx)
   },
   methods: {
     fnGetView () {
@@ -331,7 +331,7 @@ export default {
         this.$axios.post(apiUrl, formData, { headers: { 'Content-Type': 'multipart/form-data' } })
           .then((res) => {
             alert('글이 저장되었습니다.')
-            console.log('업로드 내용', res)
+            // console.log('업로드 내용', res)
             this.fnView(res.data.idx)
           }).catch((err) => {
             if (err.message.indexOf('Network Error') > -1) {

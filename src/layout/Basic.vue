@@ -43,15 +43,15 @@ export default {
     this.basicFuncs.basicWrapFunc()
   },
   mounted () {
-    console.log('router', this.thisRouter)
+    // console.log('router', this.thisRouter)
     // const $ = this.jQuerys.jqSet
-    console.log('basicFuncs', this.basicFuncs)
-    console.log('basicFuncs.basicWrapFunc', this.basicFuncs.basicWrapFunc)
+    // console.log('basicFuncs', this.basicFuncs)
+    // console.log('basicFuncs.basicWrapFunc', this.basicFuncs.basicWrapFunc)
     // console.log('jQuerys', this.jQuerys.jqWrapFunc)
-    console.log('this.layoutJs.layoutFunc', this.layoutJs.layoutFunc)
+    // console.log('this.layoutJs.layoutFunc', this.layoutJs.layoutFunc)
 
     document.body.classList.remove('is-preload')
-    console.log('window.location.hostname', window.location.hostname)
+    // console.log('window.location.hostname', window.location.hostname)
     this.layoutJs.layoutFunc()
   },
   methods () {}

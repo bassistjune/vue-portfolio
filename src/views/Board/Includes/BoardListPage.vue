@@ -101,7 +101,7 @@ export default {
     },
     currentPage: {
       handler (e) {
-        console.log('page___e', e)
+        // console.log('page___e', e)
         this.onLast = this.totalPages === e
       },
       deep: true,
@@ -117,12 +117,12 @@ export default {
   },
   mounted () {
     this.fnGetList()
-    console.log('this.sliceList', this.sliceList)
-    console.log('totalPages', this.totalPages)
+    // console.log('this.sliceList', this.sliceList)
+    // console.log('totalPages', this.totalPages)
   },
   methods: {
     fnSearch (e) {
-      console.log('e', e)
+      // console.log('e', e)
       this.searchValue = e
       this.getFilterList()
     },
@@ -146,7 +146,7 @@ export default {
       }).then((res) => {
         this.list = res.data
         this.sliceList = res.data.slice().reverse()
-        console.log('res', res)
+        // console.log('res', res)
       }).catch((err) => {
         if (err.message.indexOf('Network Error') > -1) {
           alert('네트워크가 원활하지 않습니다.\n잠시 후 다시 시도해주세요.')
@@ -154,7 +154,7 @@ export default {
       })
     },
     boardView (i) {
-      console.log('i', i)
+      // console.log('i', i)
       this.requestBody.idx = i
       this.$router.push({
         path: './BoardView',
@@ -169,15 +169,15 @@ export default {
     fnPage (page) {
       if (page === 'stepMin') {
         this.currentPage -= 1
-        console.log('page -1')
+        // console.log('page -1')
       } else if (page === 'stepPlus') {
         this.currentPage += 1
-        console.log('page +1')
+        // console.log('page +1')
       } else {
         this.currentPage = page
         this.page = page
       }
-      console.log('page____________fnpage', page)
+      // console.log('page____________fnpage', page)
     }
   }
 }

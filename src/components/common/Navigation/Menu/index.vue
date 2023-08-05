@@ -64,14 +64,14 @@ export default {
     routesAll: {
       handler (val) {
         console.log('val', val)
-        console.log('val.child', val[0].children)
+        // console.log('val.child', val[0].children)
       },
       deep: true,
       immediate: true
     },
     routeFullpath: {
       handler (val) {
-        console.log('routeFullPath', val)
+        // console.log('routeFullPath', val)
         this.fullPath = val
       },
       deep: true,
@@ -79,17 +79,17 @@ export default {
     }
   },
   mounted () {
-    console.log('currentRoute', this.thisRouter.currentRoute)
-    console.log('라우터', this.$router)
-    console.log('route', this.$route)
-    console.log('_______routes', this.$routelist)
-    console.log('routeFullPath:', this.routeFullpath)
+    // console.log('currentRoute', this.thisRouter.currentRoute)
+    // console.log('라우터', this.$router)
+    // console.log('route', this.$route)
+    // console.log('_______routes', this.$routelist)
+    // console.log('routeFullPath:', this.routeFullpath)
 
     this.childHasActive()
   },
   methods: {
     clickSame (item) {
-      console.log('GNB클릭값', item)
+      // console.log('GNB클릭값', item)
       // 네비게이션 메뉴 클릭 시 네비게이션 top 상단으로 이동
       const nav = document.querySelector('#sidebar > .inner')
       nav.scroll({

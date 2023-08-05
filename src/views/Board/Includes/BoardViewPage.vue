@@ -117,14 +117,14 @@ export default {
       deep: true,
       immediate: true,
       handler (val) {
-        console.log('listLengthOnWatch', val)
+        // console.log('listLengthOnWatch', val)
         // 변경: lists에 대한 변경 감지 후 로직 수행
         this.getFirstLast()
       }
     },
     $route: {
       handler (val) {
-        console.log('route.query', val.query)
+        // console.log('route.query', val.query)
         this.routeIdx = val.query.idx
       },
       deep: true,
@@ -132,23 +132,23 @@ export default {
     },
     inpPassword: {
       handler (v) {
-        console.log(v)
-        console.log('passwordEntered', this.passwordEntered)
+        // console.log(v)
+        // console.log('passwordEntered', this.passwordEntered)
         if (this.allSpecial.test(v)) {
-          console.log('암호에 특수문자 입력됨')
+          // console.log('암호에 특수문자 입력됨')
           alert('암호에는 특수문자를 사용할 수 없습니다.')
           this.inpPassword = v.substring(0, v.length - 1)
         }
         this.pwEnter(v)
-        console.log('password chk1', v, this.password)
-        console.log('password chk2', this.inpPassword, this.password)
+        // console.log('password chk1', v, this.password)
+        // console.log('password chk2', this.inpPassword, this.password)
       },
       deep: true,
       immediate: true
     },
     password: {
       handler (e) {
-        console.log('password__watcher', e)
+        // console.log('password__watcher', e)
       },
       deep: true,
       immediate: true
@@ -160,28 +160,28 @@ export default {
   mounted () {
     this.fnGetView()
     this.getFirstLast()
-    console.log('this.listLength = this.lists.length_____', Number(this.lists.length))
-    console.log('this.lists', this.lists)
-    console.log('this.$data', this)
-    console.log('listLength....', this.listLength)
+    // console.log('this.listLength = this.lists.length_____', Number(this.lists.length))
+    // console.log('this.lists', this.lists)
+    // console.log('this.$data', this)
+    // console.log('listLength....', this.listLength)
   },
   methods: {
     getFirstLast () {
-      console.log('methodsItem', this, this.lists, this.listLength)
-      console.log('Number(this.routeIdx),this.listLength', Number(this.routeIdx), this.listLength)
+      // console.log('methodsItem', this, this.lists, this.listLength)
+      // console.log('Number(this.routeIdx),this.listLength', Number(this.routeIdx), this.listLength)
       if (Number(this.routeIdx) === this.listLength) {
         this.disableNext = true
       } else if (this.routeIdx === Number(1)) {
         this.disablePrev = true
       }
-      console.log('disablePrev, disableNext', this.disablePrev, this.disableNext)
+      // console.log('disablePrev, disableNext', this.disablePrev, this.disableNext)
     },
     async fnGetView () {
       try {
         const res = await this.$axios.get(this.$serverUrl + '/board/' + this.routeIdx, {
           params: this.requestBody
         })
-        console.log('res', res)
+        // console.log('res', res)
         this.resAll = res
         this.allData = res.data
         this.imageUrl = res.data.file_url
@@ -191,7 +191,7 @@ export default {
         this.author = res.data.author
         this.contents = res.data.contents
         this.created_at = res.data.created_at
-        console.log('res데이터 수신완료', res.data)
+        // console.log('res데이터 수신완료', res.data)
         this.pwEnter(this.inpPassword)
       } catch (err) {
         if (err.message.indexOf('Network Error') > -1) {
@@ -203,7 +203,7 @@ export default {
       try {
         const res = await this.requestData()
         this.lists = res
-        console.log('getFnListInfo_res', res)
+        // console.log('getFnListInfo_res', res)
       } catch (err) {
         if (err.message.indexOf('Network Error') > -1) {
           alert('네트워크가 원활하지 않습니다.\n잠시 후 다시 시도해주세요.')
@@ -241,13 +241,13 @@ export default {
         })
     },
     fnPrev () {
-      console.log('route', this.$route.query)
-      console.log('this.routeIdx - 1', `${this.routeIdx--}`)
+      // console.log('route', this.$route.query)
+      // console.log('this.routeIdx - 1', `${this.routeIdx--}`)
       this.$router.push({ path: 'boardView', query: { idx: `${this.routeIdx--}` } }).catch(() => {})
     },
     fnNext () {
-      console.log('route', this.$route.query)
-      console.log('this.routeIdx + 1', `${this.routeIdx++}`)
+      // console.log('route', this.$route.query)
+      // console.log('this.routeIdx + 1', `${this.routeIdx++}`)
       this.$router.push({ path: 'boardView', query: { idx: `${this.routeIdx++}` } }).catch(() => {})
     },
     fnGoList () {
