@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "es6",
     "module": "esnext",
-    "baseUrl": "/vue-portfolio/",
+    "baseUrl": "./",
     "moduleResolution": "node",
     "paths": {
       "@/*": [
