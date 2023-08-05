@@ -162,6 +162,8 @@ export default {
     this.getFirstLast()
     console.log('this.listLength = this.lists.length_____', Number(this.lists.length))
     console.log('this.lists', this.lists)
+    console.log('this.$data', this)
+    console.log('listLength....', this.listLength)
   },
   methods: {
     getFirstLast () {

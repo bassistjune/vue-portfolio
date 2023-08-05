@@ -80,6 +80,10 @@ export default {
   },
   mounted () {
     console.log('currentRoute', this.thisRouter.currentRoute)
+    console.log('라우터', this.$router)
+    console.log('route', this.$route)
+    console.log('_______routes', this.$routelist)
+    console.log('routeFullPath:', this.routeFullpath)
 
     this.childHasActive()
   },
