@@ -248,8 +248,6 @@ export default {
         } else {
           this.chkAgree = false
         }
-        console.log('this.chkAgree', this.chkAgree)
-        console.log('titEntered,authorEntered,emailEntered,typeEntered,contentsEntered,chkAgree', this.titEntered, this.authorEntered, this.passwordEntered, this.emailEntered, this.typeEntered, this.contentsEntered, this.chkAgree)
       },
       deep: true,
       immediate: true

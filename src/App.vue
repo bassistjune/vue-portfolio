@@ -20,8 +20,6 @@ export default {
   name: 'App',
   components: {},
   mounted () {
-    const a = ''
-    console.log(a)
   }
 }
 </script>
