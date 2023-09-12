@@ -43,7 +43,6 @@ export default {
   },
   data: () => ({}),
   mounted () {
-    console.log('items', this.items)
     plFuncJs.PhotoAlbumFunc()
   },
   updated () {

@@ -213,20 +213,17 @@ export default {
           this.emailEntered = true
           return
         }
-        console.log('emailEntered', this.emailEntered)
       },
       deep: true,
       immediate: true
     },
     type: {
       handler (v) {
-        console.log(v)
         if (v == '') {
           this.typeEntered = false
         } else {
           this.typeEntered = true
         }
-        console.log('typeEntered', this.typeEntered)
       },
       deep: true,
       immediate: true
@@ -248,8 +245,6 @@ export default {
         } else {
           this.chkAgree = false
         }
-        // console.log('this.chkAgree', this.chkAgree)
-        // console.log('titEntered,authorEntered,emailEntered,typeEntered,contentsEntered,chkAgree', this.titEntered, this.authorEntered, this.passwordEntered, this.emailEntered, this.typeEntered, this.contentsEntered, this.chkAgree)
       },
       deep: true,
       immediate: true
@@ -257,8 +252,6 @@ export default {
   },
   mounted () {
     this.fnGetView()
-    // console.log('type', this.type)
-    // console.log('this.idx', this.idx)
   },
   methods: {
     fnGetView () {
@@ -293,7 +286,6 @@ export default {
     },
     submitForm () {
       // 서버로 데이터 전송 및 게시물 저장 로직 추가
-      console.log('게시물 저장')
     },
     handleImageUpload (event) {
       this.imageFile = event.target.files[0]
@@ -331,7 +323,6 @@ export default {
         this.$axios.post(apiUrl, formData, { headers: { 'Content-Type': 'multipart/form-data' } })
           .then((res) => {
             alert('글이 저장되었습니다.')
-            // console.log('업로드 내용', res)
             this.fnView(res.data.idx)
           }).catch((err) => {
             if (err.message.indexOf('Network Error') > -1) {

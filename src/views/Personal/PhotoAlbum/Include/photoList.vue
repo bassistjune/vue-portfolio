@@ -97,7 +97,6 @@ export default {
   watch: {
     sendData: {
       handler (val) {
-        console.log('watch_val', val)
       },
       deep: true
     }
@@ -105,7 +104,6 @@ export default {
   methods: {
     zoomData (event) {
       this.sendData = event
-      console.log('this.sendData', this.sendData)
       this.callModal()
     }
   }

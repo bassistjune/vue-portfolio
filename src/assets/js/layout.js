@@ -82,7 +82,7 @@ const layoutFunc = () => {
       if (!href || href === '#' || href === '') {
         return
       }
-      console.log('클릭 이벤트가 적용되는 메뉴', this, event)
+
       sidebar.classList.add('inactive')
       setTimeout(function () {
         if (target === '_blank') {
@@ -107,7 +107,6 @@ const layoutFunc = () => {
     if (window.innerWidth > parseInt(breakpoints.large[1])) {
       return
     }
-    console.log('event_body', e, this)
     sidebar.classList.add('inactive')
   })
 
@@ -158,11 +157,9 @@ const layoutFunc = () => {
 
   menuOpeners.forEach(function (opener) {
     opener.addEventListener('click', function (event) {
-      console.log('2층 메뉴 클릭')
       event.preventDefault()
       event.stopPropagation()
       menuOpeners.forEach(function (otherOpener, i) {
-        console.log('2층 메뉴 클릭 / forEach', otherOpener, i)
         if (otherOpener !== opener) {
           otherOpener.classList.remove('active')
         }

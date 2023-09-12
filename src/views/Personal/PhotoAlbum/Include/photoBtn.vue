@@ -114,7 +114,6 @@ export default {
   watch: {
     showRange: {
       handler (v) {
-        console.log('vvvvvvvvvvvvv', v)
       }
     }
   },
@@ -124,7 +123,6 @@ export default {
   methods: {
     rangeSwitch (p) {
       this.showRange = p
-      console.log('스위치 작동 :', this.showRange)
     }
   }
 }

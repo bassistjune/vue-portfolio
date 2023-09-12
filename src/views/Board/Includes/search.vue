@@ -38,7 +38,6 @@ export default {
   watch: {
     searchValue: {
       handler (v) {
-        console.log('v', v)
         this.searchVal = v
       },
       deep: true,
@@ -60,7 +59,6 @@ export default {
     clickSearch () {
       const emitVal = this.searchVal
       this.$emit('getSearch', emitVal)
-      console.log('클릭됨')
     }
   }
 }

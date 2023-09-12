@@ -57,11 +57,9 @@ export default {
     newVisitor: ''
   }),
   mounted () {
-    console.log('this.$store', this.$store)
   },
   methods: {
     addVisitor () {
-      console.log('this.newVisitor')
       if (this.newVisitor) {
         this.$store.commit('ADD_VISITOR', this.newVisitor)
         this.newVisitor = ''

@@ -67,7 +67,6 @@ export default {
     }
   },
   mounted () {
-    console.log('aaaaapagings', this.paging, this.onLast)
   },
   methods: {
     sendPage (e) {

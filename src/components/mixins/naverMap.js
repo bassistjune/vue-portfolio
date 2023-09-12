@@ -10,7 +10,6 @@ const naverMaps = {
   watch: {
     modalIsAddr: {
       handler(v) {
-        console.log('v', v)
         if (!v && !this.isShowModal) {
           this.map = null
           console.log('this.map', this.map)

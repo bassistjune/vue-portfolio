@@ -78,7 +78,6 @@ export default {
   watch: {
     sendList: {
       handler (val) {
-        // console.log('sendList', val.slice().reverse())
         this.lists = val
       }
     }

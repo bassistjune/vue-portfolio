@@ -73,7 +73,6 @@ export default {
   watch: {
     created_at: {
       handler (val) {
-        console.log('created_at', val)
       },
       deep: true,
       immediate: true
@@ -87,21 +86,18 @@ export default {
     },
     sliceList: {
       handler (e) {
-        console.log('sliceList__e', e)
       },
       deep: true,
       immediate: true
     },
     totalPages: {
       handler (v) {
-        console.log('totalP__watch', v)
       },
       deep: true,
       immediate: true
     },
     currentPage: {
       handler (e) {
-        // console.log('page___e', e)
         this.onLast = this.totalPages === e
       },
       deep: true,
@@ -117,12 +113,9 @@ export default {
   },
   mounted () {
     this.fnGetList()
-    // console.log('this.sliceList', this.sliceList)
-    // console.log('totalPages', this.totalPages)
   },
   methods: {
     fnSearch (e) {
-      // console.log('e', e)
       this.searchValue = e
       this.getFilterList()
     },
@@ -146,7 +139,6 @@ export default {
       }).then((res) => {
         this.list = res.data
         this.sliceList = res.data.slice().reverse()
-        // console.log('res', res)
       }).catch((err) => {
         if (err.message.indexOf('Network Error') > -1) {
           alert('네트워크가 원활하지 않습니다.\n잠시 후 다시 시도해주세요.')

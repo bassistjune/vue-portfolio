@@ -105,8 +105,6 @@ export default {
   methods: {
     toggleFn (item) {
       item.expanded = !item.expanded
-      console.log('item', item)
-      console.log('toggleFn item.expanded', item.expanded)
       this.mainList.Faq.list.forEach((faqItem) => {
         if (faqItem !== item) {
           faqItem.expanded = false
@@ -115,9 +113,7 @@ export default {
     },
     toggleInit () {
       this.mainList.Faq.list.forEach((faqItem, idx) => {
-          console.log('faqItem[0], faqItem, idx', faqItem, faqItem, idx)
           if (idx === 0) {
-            console.log('1')
             faqItem.expanded = true
           }
 
