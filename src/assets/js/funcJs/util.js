@@ -138,10 +138,10 @@ const utilJQFunc = () => {
           $this._hide();
   
           // Redirect to href.
-          window.setTimeout(() => {
-            if (target === "_blank") window.open(href);
-            else window.location.href = href;
-          }, config.delay + 10);
+          // window.setTimeout(() => {
+          //   if (target === "_blank") window.open(href);
+          //   else window.location.href = href;
+          // }, config.delay + 10);
         });
       }
   
