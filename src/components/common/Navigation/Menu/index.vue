@@ -10,7 +10,7 @@
       >
         <router-link
             v-if="item.name == '게시판' || !item.children"
-            @click.passive="clickSame(item.path)"
+            @click.prevent="clickSame(item.path)"
             :class="{ activeMenu: item.name == '게시판' && fullPath.includes(item.path) === true }"
             :to="item.path">{{ item.name }}</router-link>
         <span
