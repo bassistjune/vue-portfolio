@@ -94,7 +94,7 @@ const router = createRouter({
   beforeRouteUpdate (to, from, next) {
 
 
-    next() // DO IT!
+    next()
   },
   scrollBehavior(to, from, savedPosition) {
     // 항상 맨 위로 스크롤

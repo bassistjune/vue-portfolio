@@ -84,13 +84,13 @@ const layoutFunc = () => {
       }
 
       sidebar.classList.add('inactive')
-      setTimeout(function () {
-        if (target === '_blank') {
-          window.open(href)
-        } else {
-          window.location.href = href
-        }
-      }, 500)
+      // setTimeout(function () {
+      //   if (target === '_blank') {
+      //     window.open(href)
+      //   } else {
+      //     window.location.href = href
+      //   }
+      // }, 500)
     })
   })
 
