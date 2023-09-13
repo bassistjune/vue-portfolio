@@ -79,9 +79,9 @@ const layoutFunc = () => {
       event.stopPropagation()
       const href = link.getAttribute('href')
       const target = link.getAttribute('target')
-      if (!href || href === '#' || href === '') {
-        return
-      }
+      // if (!href || href === '#' || href === '') {
+      //   return
+      // }
 
       sidebar.classList.add('inactive')
       // setTimeout(function () {
