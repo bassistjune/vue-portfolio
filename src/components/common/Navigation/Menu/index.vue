@@ -28,7 +28,7 @@
               :key="idx"
           >
             <router-link
-                @click.passive="clickSame(item.path)"
+                @click.prevent="clickSame(item.path)"
                 :to="item.path"
             >
               {{ item.name }}
