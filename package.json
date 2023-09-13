@@ -2,7 +2,7 @@
   "name": "project-myhome",
   "version": "0.1.0",
   "private": true,
-  "homepage": "/vue-portfolio/",
+  "homepage": ".",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build  --mode production",
@@ -24,7 +24,7 @@
     "vue": "^3.2.13",
     "vue-head": "^2.2.0",
     "vue-meta": "^3.0.0-alpha.7",
-    "vue-router": "^4.0.13",
+    "vue-router": "^4.2.4",
     "vue-typer-next": "^1.0.1",
     "vuex": "^4.0.2",
     "webpack": "^5.88.2"

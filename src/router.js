@@ -1,8 +1,9 @@
-import { createWebHashHistory, createRouter } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 
 // 라우터 생성
 const router = createRouter({
   history: createWebHashHistory(process.env.BASE_URL), // ssr이 아닌 csr 설정 해시로 변경
+  base: process.env.BASE_URL,
   routes: [
     {
       path: '/',
@@ -88,7 +89,7 @@ const router = createRouter({
       ]
     }
   ],
-  base: process.env.BASE_URL,
+
   linkExactActiveClass: 'activeMenu',
   beforeRouteUpdate (to, from, next) {
 
