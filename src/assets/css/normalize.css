@@ -2357,3 +2357,10 @@ ul.icons li a {border: none; text-decoration: none;}
 @media screen and (max-width: 420px) {
   .rangeCustom {display: none;}
 }
+
+.disable {
+  box-shadow: inset 0 0 0 2px #eeeeee !important;
+  background-color: #eeeeee;
+  color: #ffffff !important;
+  pointer-events: none !important;
+}

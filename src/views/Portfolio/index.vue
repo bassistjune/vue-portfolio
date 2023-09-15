@@ -22,15 +22,15 @@
                 <dl>
                   <dt>{{ item.back.bTit }}</dt>
                   <dd>
-                    <ul class="list-dot">
+                    <ul class="list-dot" v-for="(list, idx) in item.back.bLists " :key="idx">
                       <li>
                         <p class="tit">
-                          {{ item.back.bListTit }}
+                          {{ list?.bListTit }}
                         </p>
                         <p
                           class="desc">
                           <span
-                              v-for="(item, i) in item.back.bListDesc"
+                              v-for="(item, i) in list.bListDesc"
                               :key="i"
                           >{{ item }}<em>,</em>&nbsp;</span></p>
                       </li>
@@ -40,6 +40,7 @@
               </div>
               <div class="btn-wrap">
                 <a
+                    :class="item.back?.btnClass? item.back?.btnClass : ''"
                   :href="item.back.btnUrl" target="_blank" type="button" class="button">{{ item.back.btn }}</a>
                 <a
                   v-if="item.back.btnUrl2 && item.back.btnUrl2.length"
@@ -150,6 +151,7 @@
   height: calc(100% - 3em);
   padding: 1.5em 2em;
   box-sizing: border-box;
+  overflow-y: auto;
 }
 .ccard-item .card-back p {margin: 0 0 0;}
 .ccard-item .card-back .card-detail dt {
