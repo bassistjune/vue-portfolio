@@ -30,21 +30,21 @@ const router = createRouter({
         //   path: '/Notes',
         //   component: () => import('./views/Notes/index')
         // },
-        {
-          name: 'To-Do-List',
-          path: '/Visitors',
-          component: () => import('./views/Visitors/index')
-        },
+        // {
+        //   name: 'To-Do-List',
+        //   path: '/Visitors',
+        //   component: () => import('./views/Visitors/index')
+        // },
         {
           name: '자료실',
           path: '/Personal',
           component: () => import('./views/Personal/index'),
           children: [
-            {
-              name: 'etc',
-              path: '/PersonalEtc',
-              component: () => import('./views/Personal/Etc/index')
-            },
+            // {
+            //   name: 'etc',
+            //   path: '/PersonalEtc',
+            //   component: () => import('./views/Personal/Etc/index')
+            // },
             {
               name: '사진첩',
               path: '/PersonalPhotoAlbum',
@@ -52,28 +52,28 @@ const router = createRouter({
             }
           ]
         },
-        {
-          name: '게시판',
-          path: '/Board',
-          component: () => import('./views/Board/index'),
-          children: [
-            {
-              name: '게시판목록',
-              path: '/Board/BoardList',
-              component: () => import('./views/Board/Includes/BoardListPage')
-            },
-            {
-              name: '게시판보기',
-              path: '/Board/BoardView',
-              component: () => import('./views/Board/Includes/BoardViewPage')
-            },
-            {
-              name: '게시판쓰기',
-              path: '/Board/BoardWrite',
-              component: () => import('./views/Board/Includes/BoardWritePage')
-            }
-          ]
-        }
+        // {
+        //   name: '게시판',
+        //   path: '/Board',
+        //   component: () => import('./views/Board/index'),
+        //   children: [
+        //     {
+        //       name: '게시판목록',
+        //       path: '/Board/BoardList',
+        //       component: () => import('./views/Board/Includes/BoardListPage')
+        //     },
+        //     {
+        //       name: '게시판보기',
+        //       path: '/Board/BoardView',
+        //       component: () => import('./views/Board/Includes/BoardViewPage')
+        //     },
+        //     {
+        //       name: '게시판쓰기',
+        //       path: '/Board/BoardWrite',
+        //       component: () => import('./views/Board/Includes/BoardWritePage')
+        //     }
+        //   ]
+        // }
       ]
     },
     {

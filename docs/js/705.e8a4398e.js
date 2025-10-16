@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkproject_myhome"]=self["webpackChunkproject_myhome"]||[]).push([[705],{705:function(e,r,t){t.r(r),t.d(r,{default:function(){return f}});var u=t(641);function n(e,r){const t=(0,u.g2)("router-view");return(0,u.uX)(),(0,u.Wv)(t,{key:e.$route.fullPath})}var o=t(6262);const c={},a=(0,o.A)(c,[["render",n]]);var f=a}}]);
+//# sourceMappingURL=705.e8a4398e.js.map

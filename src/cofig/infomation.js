@@ -5,7 +5,7 @@ const infoList = {
     { val: '1989. 07. 26', class: '__birth, pi-calendar' },
     { val: '010-3278-2063', class: '__phone, pi-mobile', href: 'tel:'},
     { val: 'bassistjune@gmail.com', class: '__email, pi-envelope', href: 'mailto:'},
-    { val: '서울 관악구 청림동', class: '__addr, pi-home' }
+    // { val: '서울 관악구 청림동', class: '__addr, pi-home' }
   ],
   copyTxt: 'Copyright © 2023.\nHan June Hee All rights reserved.\n'
 }
