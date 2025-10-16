@@ -1,5 +1,5 @@
 <template>
-  <div id="sidebar">
+  <div id="sidebar" class="inactive" style="display:none">
     <div class="inner">
       <!-- 로고 -->
       <NavLogo></NavLogo>
