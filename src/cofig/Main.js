@@ -2,7 +2,7 @@ const Mainpage = {
   Intro: {
     title: '안녕하세요!\n공부하는 프론트엔드 개발자\n한준희 입니다.',
     desc: '제 포트폴리오 페이지에 와주셔서 감사합니다.\n' +
-      'IntelliJ등을 통해 제작 된 Vue.js3 + Spring Boot 프로젝트 입니다.'
+      'IntelliJ등을 통해 제작 된 Vue.js3 프로젝트 입니다.'
   },
   Faq: {
     title: '포트폴리오 페이지에 대한 FAQ\n',
